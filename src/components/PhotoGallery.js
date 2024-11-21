@@ -35,7 +35,7 @@ const PhotoGallery = ({ photos }) => {
             {isPopupVisible && (
                 <div className="background-container" onClick={hidePhotoPopup}>
                     <div className="photo-popup" onClick={(e) => e.stopPropagation()}>
-                        <span className="close-btn" onClick={hidePhotoPopup}>X</span>
+                        <span className="close-btn" onClick={hidePhotoPopup}>x</span>
                         <div className="popup-note">{popupNote}</div>
                         {popupImages.map((url, index) => (
                             <img key={index} src={url} alt="Popup" className="popup-image" />
