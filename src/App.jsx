@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -12,12 +12,11 @@ import OurCompatibility from './pages/OurCompatibility';
 const App = () => {
   const appStyles = {
     minHeight: '100vh', // Ensure the div takes up at least the full height of the viewport
-    /* Add any other CSS styles you want to apply */
   };
 
   return (
-      <div style={appStyles}> {/* Apply styles directly to this div */}
-        <Header />
+    <div style={appStyles}>
+      <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/myphotos" element={<MyPhotos />} />
@@ -26,9 +25,9 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/compatibility" element={<OurCompatibility />} />
         </Routes>
-        <Footer />
-      </div>
+      <Footer />
+    </div>
   );
-}
+};
 
 export default App;

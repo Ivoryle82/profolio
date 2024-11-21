@@ -7,19 +7,29 @@ async function getAccessToken(clientId, code) {
     params.append("client_id", clientId);
     params.append("grant_type", "authorization_code");
     params.append("code", code);
-    params.append("redirect_uri", "http://localhost:3000/compatibility");
+    params.append("redirect_uri", "https://ivoryle82.github.io/portfolio/compatibility");
     params.append("code_verifier", verifier);
 
-    const result = await fetch("https://accounts.spotify.com/api/token", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params
-    });
-    
-    const { access_token } = await result.json();
-    console.log(access_token)
-    return access_token;
+    try {
+        const result = await fetch("https://accounts.spotify.com/api/token", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: params
+        });
+
+        if (!result.ok) {
+            throw new Error(`Failed to fetch access token: ${result.status} ${result.statusText}`);
+        }
+
+        const data = await result.json();
+        console.log("Access Token Retrieved:", data.access_token);
+        return data.access_token;
+    } catch (error) {
+        console.error("Error fetching access token:", error);
+        throw error; // Rethrow to handle it in the calling function
+    }
 }
+
 
 async function redirectToAuthCodeFlow(clientId) {
     const verifier = generateCodeVerifier(128);
@@ -30,7 +40,7 @@ async function redirectToAuthCodeFlow(clientId) {
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("response_type", "code");
-    params.append("redirect_uri", "http://localhost:3000/compatibility");
+    params.append("redirect_uri", "https://ivoryle82.github.io/portfolio/compatibility");
     params.append("scope", "user-read-private user-read-email playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public");
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);

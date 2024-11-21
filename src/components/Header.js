@@ -1,18 +1,19 @@
 import React from 'react';
 import '../styles/header.css'
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <header>
         <div class="logo">
-            <a href="/Profolio">quamatbong</a>
+            <Link to="/">quamatbong</Link>
         </div>  
         <nav>
           <ul>
-            <li><a href="/Profolio/about">About Me</a></li>
-            <li><a href="/Profolio/myphotos">My Photos</a></li>
-            <li><a href="/Profolio/myspotify">My Spotify</a></li>
-            <li><a href="/Profolio/contact">Contact</a></li>
+            <li><Link to="/about">About Me</Link></li>
+            <li><Link to="/myphotos">My Photos</Link></li>
+            <li><Link to="/myspotify">My Spotify</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
     </header>

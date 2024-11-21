@@ -1,96 +1,65 @@
+/* General layout */
 .main-content {
-    height: 100%;
-    padding: 20px;
-  }
-  
-  .ivory-le {
-    color: ivory;
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-  
-  #user-profile {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    padding: 30px;
-  }
-
-  .profile-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically center items */
-  }
-  
-  .username {
-    font-weight: bold;
-  
-  }
-
-  .profile-pic {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-
-  #user-playlists {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    padding: 30px;
-  }
-
-  .playlists-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically center items */
-  }
-
-  .playlist-iframe {
-    overflow: hidden;
-  }
-  
-  .track-list {
-    margin-top: 10px;
-  }
-  
-  #recommendations {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    padding: 30px;
-  }
-
-  .recommendation-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically center items */
-  }
-
-  .playlist-iframe {
-    overflow: hidden;
-  }
-  
-  .track-list {
-    margin-top: 10px;
-  }
-
-  .addplaylist-button {
-    display: inline-flex; /* Change display to inline-flex */
-    align-items: center; /* Align items vertically */
-    background-color: #1DB954;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 20px;
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease;
-  }
-
-  .addplaylist-button:hover {
-    background-color: #1ed760;
+  height: 100%;
+  padding: 20px;
 }
-  
-  
 
-  
+.ivory-le {
+  color: ivory;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* User Profile Section */
+#user-profile, #user-playlists, #recommendations {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  padding: 30px;
+}
+
+/* Profile Container */
+.profile-container, .playlists-container, .recommendation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center items */
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.username {
+  font-weight: bold;
+}
+
+/* Track List and iFrame Styles */
+.track-list {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px; /* Space between iframes */
+}
+
+.track-list iframe {
+  max-width: 500px; /* Max width for iframes, adjust as needed */
+  width: 100%; /* Make iframe take up full available width */
+}
+
+/* Add Playlist Button */
+.addplaylist-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1DB954;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.addplaylist-button:hover {
+  background-color: #1ed760;
+}
